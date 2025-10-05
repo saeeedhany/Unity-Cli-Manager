@@ -1,6 +1,6 @@
-# Unity CLI Manager
+<center># Unity CLI Manager</center>
 
-A command-line interface for managing Unity projects efficiently from the terminal.
+<center>A command-line interface for managing Unity projects efficiently from the terminal.</center>
 
 ## Overview
 
