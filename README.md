@@ -20,22 +20,14 @@ Unity CLI Manager brings the power of Unity project management to your terminal.
 
 <br>
 
-## What It Does
+## Features
 
-**Project Lifecycle Management**  
-Create, open, and delete Unity projects with simple commands. No more navigating through Unity Hub for basic operations.
-
-**Multi-Platform Building**  
-Build your projects for Linux, Windows, and macOS directly from the command line. Perfect for CI/CD pipelines and automated workflows.
-
-**Project Templates**  
-Start with 2D or 3D templates right from project creation. The tool handles all Unity initialization automatically.
-
-**Smart Project Organization**  
-All projects are centralized in one configurable directory. View detailed information, check Unity versions, and see project sizes at a glance.
-
-**Safety First**  
-Destructive operations like project deletion require confirmation. Color-coded output keeps you informed at every step.
+- **Project Management** - Create, open, list, and delete Unity projects
+- **Multi-Platform Builds** - Build for Linux, Windows, and macOS
+- **Project Templates** - Support for both 2D and 3D project templates
+- **Color-Coded Output** - Clear visual feedback with color-coded messages
+- **Project Information** - View detailed information about your projects
+- **Safety Features** - Confirmation prompts for destructive operations
 
 <br>
 
