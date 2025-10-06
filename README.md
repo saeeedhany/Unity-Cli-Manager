@@ -4,11 +4,11 @@
 
 <h1>Unity CLI Manager</h1>
 
-<p>A powerful command-line interface for managing Unity projects efficiently from the terminal</p>
+<p>A command-line interface for managing Unity projects efficiently from the terminal</p>
 
 [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/yourusername/unity-cli-manager)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20WSL-lightgrey.svg)](https://github.com/yourusername/unity-cli-manager)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)](https://github.com/yourusername/unity-cli-manager)
 
 </div>
 
@@ -16,32 +16,18 @@
 
 ## Overview
 
-Unity CLI Manager streamlines Unity project workflows by providing a simple, powerful command-line interface. Create, open, build, and manage Unity projects without leaving your terminal—designed for developers who value efficiency and prefer working from the command line.
+Unity CLI Manager streamlines Unity project workflows by providing a simple command-line interface. Create, open, build, and manage Unity projects without leaving your terminal.
 
 <br>
 
 ## Features
 
-**Project Management**  
-Create, open, list, and delete Unity projects with simple commands
-
-**Multi-Platform Builds**  
-Build for Linux, Windows, macOS, Android, and iOS from a single interface
-
-**Project Templates**  
-Quick project setup with support for both 2D and 3D templates
-
-**Color-Coded Output**  
-Clear visual feedback with intuitive color-coded messages
-
-**Project Information**  
-View detailed information about your projects instantly
-
-**Safety Features**  
-Confirmation prompts for destructive operations
-
-**Error Handling**  
-Comprehensive validation and helpful error messages
+- **Project Management** - Create, open, list, and delete Unity projects
+- **Multi-Platform Builds** - Build for Linux, Windows, and macOS
+- **Project Templates** - Support for both 2D and 3D project templates
+- **Color-Coded Output** - Clear visual feedback with color-coded messages
+- **Project Information** - View detailed information about your projects
+- **Safety Features** - Confirmation prompts for destructive operations
 
 <br>
 
@@ -51,11 +37,10 @@ Comprehensive validation and helpful error messages
 
 - Unity Editor installed on your system
 - Bash shell (Linux, macOS, or WSL on Windows)
-- Basic command-line knowledge
 
 ### Setup
 
-**1. Download the script**
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/yourusername/unity-cli-manager.git
@@ -70,7 +55,7 @@ chmod +x unity-cli.sh
 
 **3. Configure paths**
 
-Edit `unity-cli.sh` and update the following if needed:
+Edit `unity-cli.sh` and update:
 
 ```bash
 UNITY_PATH="$HOME/Flow/Unity/Editor/Unity"      # Path to Unity Editor
@@ -85,7 +70,7 @@ Add to your `~/.bashrc` or `~/.zshrc`:
 alias unity='/path/to/unity-cli.sh'
 ```
 
-Then reload your shell:
+Reload your shell:
 
 ```bash
 source ~/.bashrc  # or source ~/.zshrc
@@ -95,279 +80,140 @@ source ~/.bashrc  # or source ~/.zshrc
 
 ## Usage
 
-### Basic Syntax
-
 ```bash
 unity <command> [options]
 ```
 
 <br>
 
-## Commands Reference
+## Commands
 
-### Create New Project
-
-Create a new Unity project with a specified template.
+### `new` - Create Project
 
 ```bash
 unity new <ProjectName> <2d|3d>
 ```
 
 **Examples**
-
 ```bash
-unity new MyGame 3d          # Create a 3D project
-unity new Platformer 2d      # Create a 2D project
+unity new MyGame 3d
+unity new Platformer 2d
 ```
-
-> **Note:** Project names cannot contain spaces. Use camelCase or underscores instead.
 
 ---
 
-### Open Project
-
-Open an existing Unity project in the Unity Editor.
+### `open` - Open Project
 
 ```bash
 unity open <ProjectName>
 ```
 
-**Examples**
-
-```bash
-unity open MyGame           # Open MyGame project
-unity open Platformer       # Open Platformer project
-```
-
 ---
 
-### Build Project
-
-Build a Unity project for a target platform.
+### `build` - Build Project
 
 ```bash
 unity build <ProjectName> [platform]
 ```
 
-**Supported Platforms**
-
-| Platform | Aliases | Description |
-|----------|---------|-------------|
-| `linux64` | `linux` | Linux 64-bit (default) |
-| `windows` | `win64` | Windows 64-bit |
-| `mac` | `osx` | macOS |
-| `android` | - | Android APK |
-| `ios` | - | iOS (requires macOS + Xcode) |
+**Platforms:** `linux64` (default) | `windows` | `mac`
 
 **Examples**
-
 ```bash
-unity build MyGame              # Build for Linux (default)
-unity build MyGame windows      # Build for Windows
-unity build Platformer android  # Build for Android
+unity build MyGame              # Linux
+unity build MyGame windows      # Windows
+unity build MyGame mac          # macOS
 ```
 
-> **Note:** Builds are saved in `ProjectName/Builds/Platform/`
+Builds are saved in `ProjectName/Builds/Platform/`
 
 ---
 
-### List Projects
-
-Display all Unity projects in your projects directory.
+### `list` - List Projects
 
 ```bash
 unity list
 ```
 
-**Alias:** `unity ls`
-
 ---
 
-### Project Information
-
-View detailed information about a specific project.
+### `info` - Project Information
 
 ```bash
 unity info <ProjectName>
 ```
 
-**Example Output**
-
-```
-Project Information:
-  Name: MyGame
-  Path: /home/user/MyProjects/MyGame
-  Unity Version: 2023.2.0f1
-  Size: 1.2G
-```
-
 ---
 
-### Delete Project
-
-Permanently delete a Unity project.
+### `delete` - Delete Project
 
 ```bash
 unity delete <ProjectName>
 ```
 
-**Alias:** `unity rm`
-
-> **Warning:** This action is irreversible. The entire project directory will be removed.
+> **Warning:** This action is irreversible.
 
 ---
 
-### Version Information
-
-Display Unity CLI Manager version and configuration.
+### `version` - Version Information
 
 ```bash
 unity version
 ```
 
-**Aliases:** `unity --version`, `unity -v`
-
 ---
 
-### Help
-
-Display comprehensive help information.
+### `help` - Help
 
 ```bash
 unity help
 ```
 
-**Aliases:** `unity --help`, `unity -h`
-
 <br>
 
-## Workflow Examples
+## Examples
 
-### Starting a New 3D Game
+### New Project Workflow
 
 ```bash
-# Create new 3D project
 unity new AwesomeGame 3d
-
-# Open it for development
 unity open AwesomeGame
-
-# Build for testing
-unity build AwesomeGame linux64
-
-# Build for distribution
-unity build AwesomeGame windows
-unity build AwesomeGame mac
+unity build AwesomeGame
 ```
 
-### Managing Multiple Projects
+### Multi-Platform Build
 
 ```bash
-# List all projects
+unity new CrossPlatform 2d
+unity build CrossPlatform linux64
+unity build CrossPlatform windows
+unity build CrossPlatform mac
+```
+
+### Project Management
+
+```bash
 unity list
-
-# Check project details
 unity info MyGame
-
-# Delete old projects
-unity delete OldPrototype
-```
-
-### Cross-Platform Development
-
-```bash
-# Create project
-unity new CrossPlatformGame 2d
-
-# Build for multiple platforms
-unity build CrossPlatformGame linux64
-unity build CrossPlatformGame windows
-unity build CrossPlatformGame android
+unity delete OldProject
 ```
 
 <br>
 
 ## Configuration
 
-### Custom Paths
-
-Edit the script to customize paths for your environment:
+Edit `unity-cli.sh` to customize:
 
 ```bash
-# Path to Unity Editor executable
 UNITY_PATH="$HOME/Flow/Unity/Editor/Unity"
-
-# Projects directory
 PROJECTS_DIR="$HOME/MyProjects"
 ```
-
-### Multiple Unity Versions
-
-To manage multiple Unity versions, create separate scripts or modify the `UNITY_PATH` variable based on your needs.
 
 <br>
 
 ## Troubleshooting
 
-**Unity Editor Not Found**
-
-```
-Error: Unity Editor not found at: /path/to/Unity
-```
-
-*Solutions:*
-- Verify Unity is installed at the specified path
-- Update `UNITY_PATH` in the script to match your Unity installation
-- Check file permissions
-
-**Project Creation Fails**
-
-```
-Error: Failed to create project
-```
-
-*Solutions:*
-- Ensure you have write permissions in the projects directory
-- Check available disk space
-- Verify Unity Editor is properly installed
-- Try creating a project manually to test Unity installation
-
-**Build Fails**
-
-```
-Error: Build command completes but no build is created
-```
-
-*Solutions:*
-- Check Unity logs in `~/Unity/Editor.log`
-- Ensure target platform modules are installed in Unity Hub
-- For Android/iOS, verify SDK installation
-- Check project for compilation errors
-
-<br>
-
-## Tips and Best Practices
-
-**Use Descriptive Names**  
-Choose clear, descriptive project names for better organization
-
-**Regular Backups**  
-Keep backups of important projects to prevent data loss
-
-**Version Control**  
-Use Git for project versioning with a Unity-specific `.gitignore`
-
-**Clean Builds**  
-Delete old builds periodically to save disk space
-
-**Project Organization**  
-Use consistent naming conventions across all projects
-
-**Check Before Delete**  
-Always verify project name before deletion—it's irreversible
-
-**Build Incrementally**  
-Test builds on your platform before building for others
+> If Unity Editor is not found, verify the `UNITY_PATH` in the script matches your Unity installation. For build issues, check Unity logs at `~/Unity/Editor.log` and ensure platform modules are installed via Unity Hub.
 
 <br>
 
@@ -375,59 +221,19 @@ Test builds on your platform before building for others
 
 - Unity Editor (any recent version)
 - Bash 4.0 or later
-- Sufficient disk space for projects and builds
-- Platform-specific SDKs for non-native builds
-
-<br>
-
-## Limitations
-
-- Android builds require Android SDK installation
-- iOS builds require macOS with Xcode
-- WebGL builds not currently supported (can be added)
-- Assumes standard Unity project structure
+- Sufficient disk space
 
 <br>
 
 ## Contributing
 
-Suggestions and improvements are welcome. Consider adding:
-
-- WebGL build support
-- Custom build configurations
-- Unity version switching
-- Project templates management
-- Batch operations
-- Project archiving
-
-<br>
-
-## License
-
-This tool is provided as-is for personal and commercial use.
-
-<br>
-
-## Support
-
-**Unity CLI Manager**  
-Check script configuration and permissions
-
-**Unity Editor**  
-Consult Unity documentation
-
-**Platform SDKs**  
-Refer to platform-specific documentation
+Contributions welcome. Potential features: WebGL support, custom build configurations, Unity version switching, project templates management.
 
 <br>
 
 ## Version History
 
-**v1.0** — Initial release
-- Core project management features
-- Multi-platform build support
-- Color-coded terminal output
-- Comprehensive error handling
+**v1.0** - Initial release
 
 <br>
 <br>
