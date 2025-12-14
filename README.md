@@ -222,9 +222,6 @@ Contributions are welcome. Fork the repository and submit pull requests for impr
 <br>
 
 <div align="center">
-
-**Built for developers who live in the terminal**
-
+    <p style="font-weight:bold;">Built for developers who live in the terminal</p>
     <p><i>Made with focus by <a href="https://github.com/saeeedhany">saeeedhany</a></i></p>
-
 </div>
