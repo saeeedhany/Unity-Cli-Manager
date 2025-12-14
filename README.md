@@ -225,6 +225,6 @@ Contributions are welcome. Fork the repository and submit pull requests for impr
 
 **Built for developers who live in the terminal**
 
-[⬆ Back to Top](#unity-cli-manager)
+    <p><i>Made with focus by <a href="https://github.com/saeeedhany">saeeedhany</a></i></p>
 
 </div>
